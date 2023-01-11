@@ -1,0 +1,11 @@
+.details-items {
+  display: flex;
+  .details-item {
+    margin-left: 10px;
+  }
+}
+
+
+:host ::ng-deep mat-card {
+  padding-left:20px;
+}

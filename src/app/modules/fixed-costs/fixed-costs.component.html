@@ -1,0 +1,87 @@
+<div class="content">
+  <div class="title">Expenses</div>
+      <div class="table">
+        <div class="options">
+          <button mat-raised-button>
+            Add expense
+          </button>
+          <button
+              mat-raised-button
+              [disabled]="!dataSource">
+            Remove Expense
+          </button>
+        </div>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+
+
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container>
+
+
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef> Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+          </ng-container>
+
+
+          <ng-container matColumnDef="cost">
+            <th mat-header-cell *matHeaderCellDef> Cost </th>
+            <td mat-cell *matCellDef="let element"> {{element.cost | currency: "BRL"}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <div class="total-cost">
+          <div class="item">
+              <label>Total Cost: </label>
+              <p>{{totalCost | currency: "BRL"}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="table">
+        <div class="title">Services</div>
+        <div class="options">
+          <button mat-raised-button>
+            Add expense
+          </button>
+          <button
+              mat-raised-button
+              [disabled]="!dataSource">
+            Remove Expense
+          </button>
+        </div>
+        <table mat-table [dataSource]="servicesDataSource" class="mat-elevation-z8 demo-table">
+
+
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container>
+
+
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef> Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+          </ng-container>
+
+
+          <ng-container matColumnDef="cost">
+            <th mat-header-cell *matHeaderCellDef> Cost </th>
+            <td mat-cell *matCellDef="let element"> {{element.cost | currency: "BRL"}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="servicesDisplayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: servicesDisplayedColumns;"></tr>
+        </table>
+        <div class="total-cost">
+          <div class="item">
+              <label>Total Cost: </label>
+              <p>{{serviceTotalCost | currency: "BRL"}}</p>
+          </div>
+        </div>
+      </div>
+</div>

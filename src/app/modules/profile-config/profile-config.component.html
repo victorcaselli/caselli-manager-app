@@ -1,0 +1,23 @@
+<div class="container">
+  <mat-card>
+    <mat-card-title>
+      <p>Profile Configuration</p>
+    </mat-card-title>
+    <div class="money">
+      <h3>Salary Decision</h3>
+      <form [formGroup]="configurations" class="example-form">
+        <mat-form-field>
+          <mat-label>Wage</mat-label>
+          <input matInput formControlName="wage" name="wage"
+                 placeholder="Ex. 5000">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Food Voucher</mat-label>
+          <input  matInput formControlName="foodVoucher" name="foodVoucher"
+                 placeholder="Ex. 700">
+        </mat-form-field>
+        <button mat-button> Save </button>
+      </form>
+    </div>
+  </mat-card>
+</div>

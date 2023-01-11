@@ -1,0 +1,20 @@
+<div class="content">
+  <mat-toolbar>
+    <button mat-icon-button class="menu-icon" aria-label="Menu Icon">
+      <mat-icon [matMenuTriggerFor]="menu">menu</mat-icon>
+    </button>
+    <span>Caselli Manager</span>
+    <span class="spacer"></span>
+    <button (click)="openDetails()" mat-icon-button aria-label="Info Icon">
+      <mat-icon >info</mat-icon>
+    </button>
+    <button (click)="navigate('profile-config')" mat-icon-button aria-label="Settings Icon">
+      <mat-icon>settings</mat-icon>
+    </button>
+  </mat-toolbar>
+</div>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="navigate('')">Home</button>
+  <button mat-menu-item (click)="navigate('fixed-costs')">Fixed Costs</button>
+</mat-menu>
